@@ -8,7 +8,7 @@
 using namespace std;
 
 
-char Feld[3][3] = {{'1','2','3'},{'4','5','6'},{'7','8','9'}}; //Array für das Spielfeld
+char Feld[3][3] = {{'1','2','3'},{'4','5','6'},{'7','8','9'}};      //Array für das Spielfeld
 
 
 int Eingabe;
@@ -17,8 +17,9 @@ char Spielzug = 'X';
 bool Patt = false;
 
 //Funktionen
-//Funktion zur Ausgabe des Spielfeldes
 
+
+//Funktion zur Ausgabe des Spielfeldes
 
 void ausgabe_spielfeld(){
 
@@ -37,7 +38,6 @@ void ausgabe_spielfeld(){
 
 
 // Funktion zur Eingabe und erneute Ausgabe des Spielfeldes
-
 
 void Spielzug_eingabe(){
     
@@ -93,6 +93,7 @@ void Spielzug_eingabe(){
 //Funktion für Gewonnen oder Patt ausgabe
 
 bool gameover(){
+    
     //Gewinnen durch Reihen und Spalten
     
     for(int i=0; i<3; i++)
@@ -105,6 +106,7 @@ bool gameover(){
     return false;
 
     //Überprüfen ob das Spiel noch weitergespielt werden kann
+    
     for(int i=0; i<3; i++)
     for(int j=0; j<3; j++)
     if(Feld[i][j] != 'X' && Feld[i][j] != 'O')
@@ -120,6 +122,7 @@ int main()
 {
     cout<<"T I C  -- T A C -- T O E -- "<<endl;
     cout<<"Mehrspieler"<<endl;
+    
     while(gameover()){
         ausgabe_spielfeld();
         Spielzug_eingabe();
